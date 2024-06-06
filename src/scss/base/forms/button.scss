@@ -1,0 +1,34 @@
+// ========================================================================================================================================================
+// Сніппет (HTML): btn
+.button {
+	width: 100%;
+	color: $bgColor;
+	align-items: center;
+	display: inline-flex;
+	min-height: toRem(50);
+	max-width: toRem(300);
+	justify-content: center;
+	transition:
+		background-color 0.3s ease 0s,
+		color 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $bgColor;
+			background-color: $mainColor;
+		}
+	}
+	@media (max-width: $tablet) {
+		min-height: toRem(40);
+	}
+	&--red {
+		background-color: $orangeColor;
+	}
+	&--brd {
+		color: $mainColor;
+		border: toRem(1) solid $mainColor;
+	}
+	&--fw {
+		width: 100%;
+	}
+}
+// ========================================================================================================================================================

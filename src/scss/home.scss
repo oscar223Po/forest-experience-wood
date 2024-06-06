@@ -1,0 +1,166 @@
+//========================================================================================================================================================
+// Hero
+.result {
+	@include adaptiveValue("padding-top", 250, 100);
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 45, 100);
+		}
+	}
+
+	&__body {
+		display: grid;
+		@include adaptiveValue("gap", 80, 50);
+		margin: toRem(0) toRem(0) toRem(0) auto;
+		@media (min-width: $mobile) {
+			max-width: 66.233766%;
+		}
+	}
+
+	&__article {
+	}
+}
+//========================================================================================================================================================
+// Product
+.product {
+	@include adaptiveValue("padding-top", 230, 100);
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(27);
+		}
+		@media (max-width: $mobile) {
+			&:not(:last-child) {
+				margin-bottom: toRem(20);
+			}
+		}
+	}
+
+	&__body {
+		display: grid;
+		gap: toRem(20);
+		align-items: start;
+		@media (max-width: $tablet) {
+			gap: toRem(10);
+		}
+	}
+
+	&__articles {
+		&--big {
+			display: grid;
+			gap: toRem(20);
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr;
+			grid-template-areas:
+				"one one one two two two"
+				"one one one two two two"
+				"three three four four five five"
+				"three three four four five five";
+			.product__article {
+				&:nth-child(1) {
+					grid-area: one;
+				}
+				&:nth-child(2) {
+					grid-area: two;
+				}
+				&:nth-child(3) {
+					grid-area: three;
+				}
+				&:nth-child(4) {
+					grid-area: four;
+				}
+				&:nth-child(5) {
+					grid-area: five;
+				}
+			}
+			@media (max-width: $tablet) {
+				gap: toRem(10);
+			}
+			@media (max-width: $mobile) {
+				grid-auto-columns: 1fr;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+				grid-template-areas:
+					"one one"
+					"two three"
+					"four five";
+			}
+		}
+		&--min {
+			display: grid;
+			gap: toRem(20);
+			grid-template-columns: repeat(4, 1fr);
+			@media (max-width: $tablet) {
+				gap: toRem(10);
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@media (max-width: $mobile) {
+				grid-auto-columns: 1fr;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+				grid-template-areas:
+					"one one"
+					"two three"
+					"four four";
+				.product__article {
+					&:nth-child(1) {
+						grid-area: one;
+					}
+					&:nth-child(2) {
+						grid-area: two;
+					}
+					&:nth-child(3) {
+						grid-area: three;
+					}
+					&:nth-child(4) {
+						grid-area: four;
+					}
+				}
+			}
+		}
+	}
+
+	&__article {
+		overflow: hidden;
+		position: relative;
+		@media (any-hover: hover) {
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+				span {
+					opacity: 0;
+				}
+			}
+		}
+		img {
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+			transition: transform 0.3s ease 0s;
+			@include adaptiveValue("height", 370, 160);
+		}
+		span {
+			left: 40px;
+			bottom: 30px;
+			color: $bgColor;
+			font-weight: 500;
+			position: absolute;
+			pointer-events: none;
+			transition: opacity 0.3s ease 0s;
+			@include adaptiveValue("font-size", 20, 14);
+		}
+		@media (max-width: $tablet) {
+			span {
+				left: 15px;
+				bottom: 15px;
+			}
+		}
+	}
+}
+//========================================================================================================================================================

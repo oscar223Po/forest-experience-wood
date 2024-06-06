@@ -1,0 +1,185 @@
+// ========================================================================================================================================================
+// Menu
+.menu {
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+		@media (max-width: toEm(1279.98)) {
+			z-index: 1;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			left: -100%;
+			top: 0;
+			display: grid;
+			overflow: auto;
+			row-gap: toRem(20);
+			padding-top: toRem(110);
+			padding-bottom: toRem(30);
+			grid-template-rows: 1fr auto;
+			background-color: $bgColor;
+			@include adaptiveValue("padding-left", 45, 15, 0, 1279.98, 320);
+			@include adaptiveValue("padding-right", 45, 15, 0, 1279.98, 320);
+			transition: left 0.3s;
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: toRem(100);
+				left: -100%;
+				top: 0;
+				transition: left 0.3s;
+				z-index: 2;
+				background-color: $whiteColor;
+			}
+			.menu-open & {
+				left: 0;
+				&::before {
+					left: 0;
+				}
+			}
+		}
+		@media (max-width: $mobile) {
+			padding-top: toRem(90);
+			&::before {
+				height: toRem(80);
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		@include adaptiveValue("gap", 60, 20, 2, 1820, 1279.98);
+		@media (max-width: toEm(1279.98)) {
+			flex-direction: column;
+		}
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+		display: flex;
+		font-weight: 500;
+		align-items: center;
+		min-height: toRem(40);
+		transition: color 0.3s ease 0s;
+		@include adaptiveValue("font-size", 18, 14);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
+			}
+		}
+		@media (max-width: $mobile) {
+			min-height: toRem(30);
+		}
+	}
+
+	&__footer {
+		@media (min-width: toEm(1279.98)) {
+			display: none;
+		}
+	}
+
+	&__links {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__nav {
+		display: flex;
+		font-weight: 500;
+		align-items: center;
+		font-size: toRem(16);
+		min-height: toRem(35);
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
+			}
+		}
+	}
+
+	&__socials {
+		display: flex;
+		gap: toRem(15);
+		align-items: center;
+		&:not(:last-child) {
+			margin-bottom: toRem(30);
+		}
+	}
+
+	&__social {
+		display: flex;
+		width: toRem(24);
+		height: toRem(24);
+		align-items: center;
+		font-size: toRem(24);
+		justify-content: center;
+	}
+
+	&__button {
+		@media (max-width: $mobileSmall) {
+			max-width: 100%;
+			padding: toRem(0);
+		}
+	}
+}
+// Burger
+.icon-menu {
+	display: none;
+	@media (max-width: toEm(1279.98)) {
+		display: block;
+		position: relative;
+		width: toRem(28);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+	@media (max-width: $mobileSmall) {
+		width: toRem(24);
+		height: toRem(16);
+	}
+}
+// ========================================================================================================================================================

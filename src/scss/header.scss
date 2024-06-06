@@ -1,0 +1,143 @@
+//========================================================================================================================================================
+// Header
+.header {
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+	transition:
+		background-color 0.3s ease 0s,
+		box-shadow 0.3s ease 0s;
+	&._header-scroll {
+		background-color: $whiteColor;
+		box-shadow: rgba(33, 35, 38, 0.05) 0px 10px 10px -10px;
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		max-width: toRem(1820);
+		min-height: toRem(140);
+		justify-content: space-between;
+		transition: min-height 0.3s ease 0s;
+		@include adaptiveValue("padding-left", 50, 15);
+		@include adaptiveValue("padding-right", 50, 15);
+		._header-scroll & {
+			min-height: toRem(100);
+		}
+		@media (max-width: toEm(1279.98)) {
+			min-height: toRem(100);
+		}
+		@media (max-width: $mobile) {
+			min-height: toRem(80);
+			._header-scroll & {
+				min-height: toRem(80);
+			}
+		}
+	}
+
+	&__logo {
+		z-index: 3;
+		position: relative;
+		@include adaptiveValue("font-size", 36, 24);
+	}
+
+	&__menu {
+	}
+
+	&__actions {
+		z-index: 3;
+		display: flex;
+		position: relative;
+		align-items: center;
+		@include adaptiveValue("gap", 40, 10, 2, 1820, 1279.98);
+		@media (max-width: toEm(1279.98)) {
+			gap: toRem(20);
+		}
+		@media (max-width: $mobile) {
+			gap: toRem(10);
+		}
+	}
+
+	&__phone {
+		font-weight: 700;
+		&::before {
+			display: none;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		@media (max-width: $mobile) {
+			display: flex;
+			width: toRem(40);
+			height: toRem(40);
+			align-items: center;
+			font-size: toRem(35);
+			justify-content: center;
+			span {
+				display: none;
+			}
+			&::before {
+				display: flex;
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			width: toRem(24);
+			height: toRem(24);
+			font-size: toRem(24);
+		}
+	}
+
+	&__cart {
+		display: flex;
+		width: toRem(40);
+		height: toRem(40);
+		position: relative;
+		align-items: center;
+		font-size: toRem(40);
+		justify-content: center;
+		transition: color 0.3s ease 0s;
+		span {
+			display: flex;
+			top: toRem(-7);
+			color: $bgColor;
+			right: toRem(-7);
+			font-weight: 700;
+			width: toRem(20);
+			height: toRem(20);
+			position: absolute;
+			border-radius: 50%;
+			align-items: center;
+			font-size: toRem(12);
+			justify-content: center;
+			background-color: $orangeColor;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
+			}
+		}
+		@media (max-width: toEm(1279.98)) {
+			margin-right: toRem(20);
+		}
+		@media (max-width: $mobile) {
+			margin-right: toRem(10);
+		}
+		@media (max-width: $mobileSmall) {
+			width: toRem(24);
+			height: toRem(24);
+			font-size: toRem(27);
+			span {
+				width: toRem(15);
+				height: toRem(15);
+				font-size: toRem(8);
+			}
+		}
+	}
+}
+//========================================================================================================================================================
