@@ -1,94 +1,181 @@
-// Базові стилі спойлерів
+// ========================================================================================================================================================
 // Сніппет (HTML): spoller
-
-// Блок зі спойлерами
 .spollers {
 	display: grid;
-	gap: 15px;
+	gap: toRem(20);
+	@media (max-width: $mobile) {
+		gap: toRem(10);
+	}
 }
 // Спойлер
 .spollers__item {
-	font-size: toRem(20);
+	padding-top: toRem(20);
+	padding-bottom: toRem(20);
+	border-top: toRem(1) solid $mainColor;
+	&:last-child {
+		padding-bottom: toRem(40);
+		border-bottom: toRem(1) solid $mainColor;
+	}
+	@media (max-width: $mobile) {
+		padding-top: toRem(15);
+		padding-bottom: toRem(15);
+		&:last-child {
+			padding-bottom: toRem(25);
+		}
+	}
 }
 // Заголовок спойлера
 .spollers__title {
 	width: 100%;
+	display: flex;
+	gap: toRem(20);
 	cursor: default;
-	text-align: left;
-	border: 1px solid #eee;
-	padding: toRem(10) toRem(15);
-	border-radius: toRem(5);
-	position: relative;
 	list-style: none;
+	text-align: left;
+	align-items: center;
+	min-height: toRem(36);
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	transition: color 0.3s ease 0s;
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
 	}
-	._spoller-init & {
-		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $orangeColor;
 		}
+	}
+	&::before {
+		font-size: toRem(36);
+		transform: rotate(45deg);
+		transition:
+			transform 0.3s ease 0s,
+			color 0.3s ease 0s;
+	}
+	&._spoller-active {
+		color: $orangeColor;
 		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
+			transform: rotate(0deg);
 		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
+	}
+	@media (max-width: $mobile) {
+		&::before {
+			font-size: toRem(30);
 		}
-		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
+	}
+}
+// Контент спойлера
+.spollers__text {
+	margin-top: toRem(20);
+	@media (max-width: $mobile) {
+		margin-top: toRem(15);
+	}
+}
+// ========================================================================================================================================================
+// Spoller Main Footer
+.spollers-main-footer {
+	&__item {
+		@media (max-width: $mobile) {
+			padding-bottom: toRem(15);
+			&:not(:last-child) {
+				border-bottom: toRem(1) solid rgba($mainColor, 0.5);
 			}
-			&::after {
-				transform: rotate(40deg);
-			}
 		}
-		/*
+	}
+
+	&__title {
+		width: 100%;
+		cursor: default;
+		list-style: none;
+		text-align: left;
+		position: relative;
+		text-transform: uppercase;
+		&::marker,
+		&::-webkit-details-marker {
+			display: none;
+		}
 		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
+			cursor: pointer;
 			&::before,
 			&::after {
 				content: "";
 				position: absolute;
-				right: 0;
-				top: toRem(12);
-				height: toRem(1);
-				transition: all 0.3s ease 0s;
-				width: toRem(10);
-				background-color: #000;
+				right: 10px;
+				top: 50%;
+				background-color: $mainColor;
+				height: 1.5px;
+				width: 12px;
+				transition: transform 0.5s ease 0s;
 			}
 			&::before {
-				transform: rotate(40deg);
-				right: toRem(7);
+				transform: translate(-75%, -50%) rotate(40deg);
 			}
 			&::after {
-				transform: rotate(-40deg);
+				transform: translate(0, -50%) rotate(-40deg);
+			}
+			&._spoller-active {
+				&::before {
+					transform: translateX(-75%) rotate(-40deg);
+				}
+				&::after {
+					transform: rotate(40deg);
+				}
+			}
+			/*
+			._spoller-init & {
+				position: relative;
+				width: 100%;
+				text-align: left;
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					right: 0;
+					top: toRem(12);
+					height: toRem(1);
+					transition: all 0.3s ease 0s;
+					width: toRem(10);
+					background-color: #000;
+				}
+				&::before {
+					transform: rotate(40deg);
+					right: toRem(7);
+				}
+				&::after {
+					transform: rotate(-40deg);
+				}
+			}
+			&._spoller-active {
+				&::before {
+					transform: rotate(-40deg);
+				}
+				&::after {
+					transform: rotate(40deg);
+				}
+			}
+			*/
+		}
+	}
+
+	&__list {
+		display: grid;
+		gap: toRem(10);
+		margin-top: toRem(15);
+	}
+
+	&__list-item {
+	}
+
+	&__link {
+		display: inline-flex;
+		transition: color 0.3s ease 0s;
+		@include adaptiveValue("font-size", 16, 14);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
 			}
 		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
 	}
 }
-// Контент спойлера
-.spollers__body {
-	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
-}
+// ========================================================================================================================================================

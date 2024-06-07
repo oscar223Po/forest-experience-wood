@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Forest Experience (Услуги компании) - ServicePage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<!-- [Hero] -->
+			<section class="hero">
+				<div class="hero__container">
+					<h1 class="hero__title title title--big">Услуги компании</h1>
+					<h4 class="hero__subtitle hero__subtitle--max">Предоставляем ряд услуг, которые пригодятся, если собираетесь заняться отделкой </h4>
+					<div class="hero__buttons">
+						<a href="" class="hero__button button button--red">Оставить заявку</a>
+					</div>
+				</div>
+				<div class="hero__image"><img src="@img/hero.jpg" alt="Image"></div>
+			</section>
+			<!-- [Product] -->
+			<section class="product">
+				<div class="product__container">
+					<h3 class="product__title title title--ord title--1080">Наша компания оказывает услуги от термообработки и покраски до производства термокамер, чтобы вы смогли самостоятельно производить термодревесину</h3>
+					<div class="product__body">
+						<div class="product__articles product__articles--ord">
+							<div class="product__article"><img src="@img/product.jpg" alt="Image"><span>Термообработка</span></div>
+							<div class="product__article"><img src="@img/product.jpg" alt="Image"><span>Покраска</span></div>
+							<div class="product__article"><img src="@img/product.jpg" alt="Image"><span>Монтаж</span></div>
+							<div class="product__article"><img src="@img/product.jpg" alt="Image"><span>Дизайн-проект</span></div>
+							<div class="product__article"><img src="@img/product.jpg" alt="Image"><span>Изготовление термокамер</span></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_form.htm',{})
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

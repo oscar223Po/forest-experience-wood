@@ -1,0 +1,62 @@
+// ========================================================================================================================================================
+// About
+.about {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__heading {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 52, 42);
+		}
+	}
+
+	&__body {
+		display: grid;
+		@include adaptiveValue("gap", 40, 20);
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $mobile) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__text {
+		@include adaptiveValue("max-width", 600, 320, $containerWidth, 767.98);
+	}
+}
+// ========================================================================================================================================================
+// Best
+.best {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 20);
+		}
+	}
+
+	&__title {
+	}
+
+	&__image {
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transform: scale(1.01);
+			object-position: cover;
+			@include adaptiveValue("height", 650, 200);
+		}
+		@media (min-width: $mobile) {
+			border: toRem(10) solid $redColor;
+		}
+		@media (max-width: $mobile) {
+			@include adaptiveValue("padding-left", 30, 15, 0, 767.98, 320);
+			@include adaptiveValue("padding-right", 30, 15, 0, 767.98, 320);
+			img {
+				border: toRem(10) solid $redColor;
+			}
+		}
+	}
+}
+// ========================================================================================================================================================

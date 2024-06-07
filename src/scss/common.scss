@@ -26,6 +26,12 @@
 		span {
 			color: $orangeColor;
 		}
+		@media (max-width: $mobile) {
+			text-transform: uppercase;
+		}
+	}
+	&--sub {
+		@include adaptiveValue("font-size", 20, 14);
 	}
 	&--1380 {
 		@include adaptiveValue("max-width", 1280, 520, 0, $containerWidth, 767.98);
@@ -45,7 +51,17 @@
 }
 .text {
 	line-height: 120%;
-	@include adaptiveValue("font-size", 16, 14);
+	p {
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	&--big {
+		@include adaptiveValue("font-size", 24, 18);
+	}
+	&--min {
+		@include adaptiveValue("font-size", 16, 14);
+	}
 }
 //========================================================================================================================================================
 // Article
@@ -67,6 +83,117 @@
 	&__text {
 		@media (max-width: $mobileSmall) {
 			padding-left: toRem(80);
+		}
+	}
+}
+//========================================================================================================================================================
+// Heading
+.heading {
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 34, 24);
+		}
+	}
+
+	&__text {
+	}
+}
+//========================================================================================================================================================
+// Image
+.image {
+	overflow: hidden;
+	&--hv {
+		@media (any-hover: hover) {
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transform: scale(1.01);
+		object-position: center;
+		transition: transform 0.3s ease 0s;
+	}
+}
+//========================================================================================================================================================
+// Arrows
+.arrows {
+	display: flex;
+	align-items: center;
+	.arrows-arrow {
+		display: flex;
+		width: toRem(40);
+		height: toRem(40);
+		border-radius: 50%;
+		align-items: center;
+		font-size: toRem(22);
+		padding-right: toRem(3);
+		justify-content: center;
+		border: toRem(1.5) solid $mainColor;
+		transition:
+			background-color 0.3s ease 0s,
+			color 0.3s ease 0s,
+			outline 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $bgColor;
+				background-color: $orangeColor;
+				border: toRem(1.5) solid $orangeColor;
+			}
+		}
+		&--prev {
+		}
+		&--next {
+			transform: rotate(-180deg);
+		}
+	}
+}
+//========================================================================================================================================================
+// Action
+.action {
+	&__list {
+		&:not(:last-child) {
+			margin-bottom: toRem(30);
+		}
+	}
+
+	&__link {
+		display: flex;
+		transition: color 0.3s ease 0s;
+		@include adaptiveValue("font-size", 20, 16);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__socials {
+		display: flex;
+		gap: toRem(15);
+		align-items: center;
+	}
+
+	&__social {
+		display: flex;
+		width: toRem(30);
+		height: toRem(30);
+		align-items: center;
+		font-size: toRem(30);
+		justify-content: center;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
+			}
 		}
 	}
 }

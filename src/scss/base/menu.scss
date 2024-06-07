@@ -83,42 +83,10 @@
 		}
 	}
 
-	&__links {
-		&:not(:last-child) {
-			margin-bottom: toRem(20);
-		}
-	}
-
-	&__nav {
-		display: flex;
-		font-weight: 500;
-		align-items: center;
-		font-size: toRem(16);
-		min-height: toRem(35);
-		transition: color 0.3s ease 0s;
-		@media (any-hover: hover) {
-			&:hover {
-				color: $orangeColor;
-			}
-		}
-	}
-
-	&__socials {
-		display: flex;
-		gap: toRem(15);
-		align-items: center;
+	&__action {
 		&:not(:last-child) {
 			margin-bottom: toRem(30);
 		}
-	}
-
-	&__social {
-		display: flex;
-		width: toRem(24);
-		height: toRem(24);
-		align-items: center;
-		font-size: toRem(24);
-		justify-content: center;
 	}
 
 	&__button {

@@ -7,17 +7,28 @@ textarea {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	outline: none;
 }
 .input {
-	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
 	caret-color: inherit;
+	min-height: toRem(60);
+	border-radius: 0 !important;
+	border-bottom: 1px solid $mainColor;
+	&::placeholder {
+		color: $grayColor;
+	}
 	&._form-focus {
 	}
 	&._form-error {
+		&::placeholder {
+			font-weight: 500;
+			color: $orangeColor;
+		}
+	}
+	@media (max-width: $mobile) {
+		min-height: toRem(50);
 	}
 }
 .input[placeholder]:not([data-placeholder-nohiden]) {

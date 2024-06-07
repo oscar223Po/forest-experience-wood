@@ -20,6 +20,9 @@
 	@media (max-width: $tablet) {
 		min-height: toRem(40);
 	}
+	@media (max-width: $mobileSmall) {
+		max-width: 100%;
+	}
 	&--red {
 		background-color: $orangeColor;
 	}

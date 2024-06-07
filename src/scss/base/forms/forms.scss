@@ -1,21 +1,63 @@
 // ========================================================================================================================================================
-//<FORM>
-// Сніппет (HTML):
+// <FORM>
 .form {
-	&__row {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
 	}
-	&__column {
+
+	&__heading {
+		&:not(:last-child) {
+			margin-bottom: toRem(30);
+		}
+		@media (max-width: $mobile) {
+			&:not(:last-child) {
+				margin-bottom: toRem(25);
+			}
+		}
 	}
-	&__line {
+
+	&__body {
+		display: grid;
+		align-items: start;
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $mobile) {
+			gap: toRem(30);
+			grid-template-columns: auto;
+		}
 	}
-	&__input {
+
+	&__action {
+		@media (max-width: $mobile) {
+			order: 2;
+		}
 	}
-	&__button {
-	}
-	&__error {
+
+	&__blank {
+		@media (max-width: $mobile) {
+			order: 1;
+		}
 	}
 }
-//</FORM>
+.blank {
+	display: grid;
+	@include adaptiveValue("gap", 40, 25);
+	.form__error {
+		display: none;
+	}
+	&__inputs {
+		display: grid;
+		gap: toRem(20);
+		@media (max-width: $mobile) {
+			gap: toRem(15);
+		}
+	}
+
+	&__checkbox {
+	}
+
+	&__button {
+	}
+}
 //--------------------------------------------------------------
 // <BUTTONS>
 // Сніппет (HTML): btn
@@ -23,11 +65,11 @@
 //--------------------------------------------------------------
 // <INPUTS>
 // Сніппет (HTML): inp
-// @import "input";
+@import "input";
 //--------------------------------------------------------------
 // <CHECK>
 // Сніппет (HTML): chk
-// @import "checkbox";
+@import "checkbox";
 //--------------------------------------------------------------
 // <RADIO>
 // Сніппет (HTML): opt

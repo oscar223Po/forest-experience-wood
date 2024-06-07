@@ -1,7 +1,7 @@
 //========================================================================================================================================================
 // Hero
 .result {
-	@include adaptiveValue("padding-top", 250, 100);
+	@include adaptiveValue("padding-top", 200, 100);
 	&__container {
 	}
 
@@ -26,8 +26,14 @@
 //========================================================================================================================================================
 // Product
 .product {
-	@include adaptiveValue("padding-top", 230, 100);
+	@include adaptiveValue("padding-top", 200, 100);
 	&__container {
+	}
+
+	&__heading {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 52, 42);
+		}
 	}
 
 	&__title {
@@ -51,9 +57,12 @@
 	}
 
 	&__articles {
+		display: grid;
+		gap: toRem(20);
+		@media (max-width: $tablet) {
+			gap: toRem(10);
+		}
 		&--big {
-			display: grid;
-			gap: toRem(20);
 			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr 1fr;
 			grid-template-areas:
@@ -78,9 +87,6 @@
 					grid-area: five;
 				}
 			}
-			@media (max-width: $tablet) {
-				gap: toRem(10);
-			}
 			@media (max-width: $mobile) {
 				grid-auto-columns: 1fr;
 				grid-template-columns: 1fr 1fr;
@@ -91,12 +97,43 @@
 					"four five";
 			}
 		}
+		&--ord {
+			grid-auto-columns: 1fr;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-template-areas:
+				"one one two two three three"
+				"four four four five five five";
+			.product__article {
+				&:nth-child(1) {
+					grid-area: one;
+				}
+				&:nth-child(2) {
+					grid-area: two;
+				}
+				&:nth-child(3) {
+					grid-area: three;
+				}
+				&:nth-child(4) {
+					grid-area: four;
+				}
+				&:nth-child(5) {
+					grid-area: five;
+				}
+			}
+			@media (max-width: $mobile) {
+				grid-auto-columns: 1fr;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+				grid-template-areas:
+					"one two"
+					"three four"
+					"five five";
+			}
+		}
 		&--min {
-			display: grid;
-			gap: toRem(20);
 			grid-template-columns: repeat(4, 1fr);
 			@media (max-width: $tablet) {
-				gap: toRem(10);
 				grid-template-columns: repeat(2, 1fr);
 			}
 			@media (max-width: $mobile) {
@@ -160,6 +197,235 @@
 				left: 15px;
 				bottom: 15px;
 			}
+		}
+	}
+}
+//========================================================================================================================================================
+// Expert
+.expert {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__heading {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 52, 42);
+		}
+	}
+
+	&__body {
+		display: grid;
+		gap: toRem(30);
+		align-items: start;
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $mobile) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__content {
+		max-width: toRem(600);
+		@media (max-width: $mobile) {
+			order: 2;
+		}
+	}
+
+	&__text {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 32);
+		}
+	}
+
+	&__button {
+	}
+
+	&__image {
+		border: toRem(10) solid $redColor;
+		&--margin {
+			@media (max-width: toEm(1279.98)) {
+				margin-top: toRem(115);
+			}
+			@media (max-width: $mobile) {
+				margin-top: toRem(0);
+			}
+		}
+		@media (max-width: $mobile) {
+			order: 1;
+		}
+	}
+}
+//========================================================================================================================================================
+// Patent
+.patent {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 34, 40);
+		}
+	}
+
+	&__body {
+		display: grid;
+		align-items: start;
+		@include adaptiveValue("gap", 80, 30);
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $tablet) {
+			max-width: 66.233766%;
+			grid-template-columns: auto;
+			margin: toRem(0) toRem(0) toRem(0) auto;
+		}
+		@media (max-width: $mobile) {
+			max-width: 100%;
+			margin: toRem(0);
+		}
+	}
+
+	&__body {
+	}
+
+	&__image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $whiteColor;
+		@include adaptiveValue("padding-left", 20, 15);
+		@include adaptiveValue("padding-right", 20, 15);
+		@include adaptiveValue("padding-top", 112, 15, 0, $containerWidth, 767.98);
+		@include adaptiveValue("padding-bottom", 112, 15, 0, $containerWidth, 767.98);
+		img {
+			width: 100%;
+		}
+	}
+
+	&__articles {
+		display: grid;
+		@include adaptiveValue("gap", 80, 50);
+	}
+
+	&__article {
+	}
+}
+//========================================================================================================================================================
+// Example
+.example {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 0, 15);
+		}
+	}
+
+	&__arrows {
+		justify-content: flex-end;
+		@include adaptiveValue("gap", 40, 25);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 20, 15);
+		}
+	}
+
+	&__arrow {
+	}
+
+	&__slider.swiper {
+		@media (max-width: $mobile) {
+			overflow: visible;
+		}
+	}
+
+	&__wrapper {
+	}
+
+	&__slide {
+	}
+}
+.slide-example {
+	padding-bottom: toRem(20);
+	border-bottom: toRem(1) solid $mainColor;
+	&__image {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__title {
+	}
+}
+//========================================================================================================================================================
+// News
+.news {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__items {
+		display: grid;
+		row-gap: toRem(30);
+		@include adaptiveValue("column-gap", 20, 10);
+		grid-template-columns: repeat(auto-fill, minmax(toRem(400), 1fr));
+		&:not(:last-child) {
+			margin-bottom: toRem(40);
+		}
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: toEm(360)) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__item {
+	}
+
+	&__button {
+	}
+}
+.item-news {
+	display: grid;
+	@include adaptiveValue("gap", 20, 10);
+	border-bottom: toRem(1) solid $mainColor;
+	@include adaptiveValue("padding-bottom", 20, 10);
+	&__image {
+		img {
+			@include adaptiveValue("height", 370, 160);
+		}
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+}
+//========================================================================================================================================================
+// Quest
+.quest {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+	}
+
+	&__spollers {
+		display: grid;
+		margin: toRem(0) toRem(0) toRem(0) auto;
+		@media (min-width: $mobile) {
+			max-width: 66.233766%;
 		}
 	}
 }
