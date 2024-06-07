@@ -1569,9 +1569,6 @@ textarea.input {
   .spollers-main-footer__item:not(:last-child) {
     border-bottom: .0625rem solid rgba(26,26,26,.5)
   }
-  .title--ord {
-    text-transform: uppercase
-  }
   .title--1380 {
     max-width: 32.5rem
   }

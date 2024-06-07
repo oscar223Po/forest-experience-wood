@@ -26,9 +26,6 @@
 		span {
 			color: $orangeColor;
 		}
-		@media (max-width: $mobile) {
-			text-transform: uppercase;
-		}
 	}
 	&--sub {
 		@include adaptiveValue("font-size", 20, 14);
