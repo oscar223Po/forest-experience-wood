@@ -1,23 +1,58 @@
+// ========================================================================================================================================================
 .tabs {
+	::-webkit-scrollbar {
+		display: none;
+	}
 	// .tabs__navigation
 	&__navigation {
 		display: flex;
+		overflow-x: auto;
+		white-space: nowrap;
+		&:not(:last-child) {
+			margin-bottom: toRem(45);
+		}
+		@media (max-width: $mobile) {
+			gap: toRem(10);
+			@include adaptiveValue("padding-left", 28, 15, 0, 767.98, 320);
+			@include adaptiveValue("padding-right", 28, 15, 0, 767.98, 320);
+			@include adaptiveValue("margin-left", -28, -15, 0, 767.98, 320);
+			@include adaptiveValue("margin-right", -28, -15, 0, 767.98, 320);
+			&:not(:last-child) {
+				margin-bottom: toRem(35);
+			}
+		}
 	}
 	// .tabs__title
 	&__title {
-		border: 1px solid #eee;
-		padding: toRem(10) toRem(15);
-		border-radius: toRem(5);
+		width: 100%;
+		outline: none;
+		border-bottom: toRem(1) solid $mainColor;
+		@include adaptiveValue("font-size", 24, 18);
+		padding: toRem(0) toRem(20) toRem(20) toRem(20);
+		transition:
+			border-bottom 0.3s ease 0s,
+			color 0.3s ease 0s;
 		&._tab-active {
-			border: 1px solid #000;
+			color: $orangeColor;
+			border-bottom: toRem(1) solid $orangeColor;
+		}
+		@media (max-width: $mobile) {
+			padding: 0px 16px;
+			min-height: toRem(32);
+			border-radius: toRem(30);
+			border: toRem(1) solid $mainColor;
+			&._tab-active {
+				color: $bgColor;
+				background-color: $orangeColor;
+				border: toRem(1) solid $orangeColor;
+			}
 		}
 	}
 	// .tabs__content
 	&__content {
-		border: 1px solid #eee;
-		padding: toRem(10) toRem(15);
 	}
 	// .tabs__body
 	&__body {
 	}
 }
+// ========================================================================================================================================================

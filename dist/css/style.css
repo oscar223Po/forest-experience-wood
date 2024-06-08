@@ -453,6 +453,28 @@ textarea.input {
   display: inline-flex;
   transition: color .3s ease 0s
 }
+.tabs ::-webkit-scrollbar {
+  display: none
+}
+.tabs__navigation {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap
+}
+.tabs__navigation:not(:last-child) {
+  margin-bottom: 2.8125rem
+}
+.tabs__title {
+  width: 100%;
+  outline: 0;
+  border-bottom: .0625rem solid #1a1a1a;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  transition: border-bottom .3s ease 0s,color .3s ease 0s
+}
+.tabs__title._tab-active {
+  color: #be4e00;
+  border-bottom: .0625rem solid #be4e00
+}
 .ibg {
   width: 100%;
   height: 100%;
@@ -529,6 +551,9 @@ textarea.input {
   transition: -webkit-transform .3s ease 0s;
   transition: transform .3s ease 0s;
   transition: transform .3s ease 0s,-webkit-transform .3s ease 0s
+}
+.image--brd {
+  border: .625rem solid #f60000
 }
 .arrows {
   display: flex;
@@ -790,9 +815,6 @@ textarea.input {
 .expert__content {
   max-width: 37.5rem
 }
-.expert__image {
-  border: .625rem solid #f60000
-}
 .patent__body {
   display: grid;
   align-items: start;
@@ -859,11 +881,38 @@ textarea.input {
   -o-object-position: cover;
   object-position: cover
 }
+.camera__title:not(:last-child) {
+  margin-bottom: 1.875rem
+}
+.camera-body__content {
+  display: grid;
+  gap: .9375rem;
+  align-items: start;
+  grid-template-columns: repeat(2,1fr)
+}
+.camera-body__describ {
+  display: grid
+}
+.camera-body__about-title:not(:last-child) {
+  margin-bottom: 1.25rem
+}
+.camera-body__caracter-title:not(:last-child) {
+  margin-bottom: 1.25rem
+}
+.camera-body__result-title:not(:last-child) {
+  margin-bottom: 1.25rem
+}
+.camera-body__image {
+  margin-top: 5rem
+}
 .hero__container {
   display: grid
 }
 .hero__title {
   max-width: 85.3125rem
+}
+.hero__title--max {
+  max-width: 100%
 }
 .hero__subtitle {
   font-style: italic;
@@ -974,6 +1023,9 @@ textarea.input {
   .spollers-main-footer__link {
     font-size: 1rem
   }
+  .tabs__title {
+    font-size: 1.5rem
+  }
   .title--big {
     font-size: 3.75rem
   }
@@ -1000,6 +1052,9 @@ textarea.input {
   }
   .text--big {
     font-size: 1.5rem
+  }
+  .text--sub {
+    font-size: 1.25rem
   }
   .text--min {
     font-size: 1rem
@@ -1144,6 +1199,12 @@ textarea.input {
   .best__image img {
     height: 40.625rem
   }
+  .camera {
+    padding-top: 12.5rem
+  }
+  .camera-body__describ {
+    gap: 2.5rem
+  }
   .hero__container {
     gap: 2.125rem
   }
@@ -1192,6 +1253,9 @@ textarea.input {
   .spollers-main-footer__link {
     font-size: .875rem
   }
+  .tabs__title {
+    font-size: 1.125rem
+  }
   .title--big {
     font-size: 1.75rem
   }
@@ -1203,6 +1267,9 @@ textarea.input {
   }
   .text--big {
     font-size: 1.125rem
+  }
+  .text--sub {
+    font-size: 1rem
   }
   .text--min {
     font-size: .875rem
@@ -1328,6 +1395,12 @@ textarea.input {
   }
   .best__image img {
     height: 12.5rem
+  }
+  .camera {
+    padding-top: 6.25rem
+  }
+  .camera-body__describ {
+    gap: 1.5625rem
   }
   .hero__container {
     gap: 1.25rem
@@ -1511,6 +1584,9 @@ textarea.input {
   .news__items {
     grid-template-columns: repeat(2,1fr)
   }
+  .camera-body__image {
+    margin-top: 0
+  }
   .hero {
     padding-top: 6.875rem
   }
@@ -1568,6 +1644,23 @@ textarea.input {
   }
   .spollers-main-footer__item:not(:last-child) {
     border-bottom: .0625rem solid rgba(26,26,26,.5)
+  }
+  .tabs__navigation {
+    gap: .625rem
+  }
+  .tabs__navigation:not(:last-child) {
+    margin-bottom: 2.1875rem
+  }
+  .tabs__title {
+    padding: 0 16px;
+    min-height: 2rem;
+    border-radius: 1.875rem;
+    border: .0625rem solid #1a1a1a
+  }
+  .tabs__title._tab-active {
+    color: #f7f7f7;
+    background-color: #be4e00;
+    border: .0625rem solid #be4e00
   }
   .title--1380 {
     max-width: 32.5rem
@@ -1688,21 +1781,46 @@ textarea.input {
   .best__image img {
     border: .625rem solid #f60000
   }
+  .camera__title:not(:last-child) {
+    margin-bottom: 1.25rem
+  }
+  .camera-body__content {
+    gap: 2.1875rem;
+    grid-template-columns: auto
+  }
+  .camera-body__describ {
+    order: 2
+  }
+  .camera-body__image {
+    order: 1
+  }
   .hero {
     padding-top: 5.625rem
   }
 }
-@media (max-width:47.99875em) and (any-hover:hover) {
-  .header__phone:hover {
-    text-decoration: none
-  }
-}
 @media (max-width:47.99875em) and (max-width:20em) {
+  .tabs__navigation {
+    padding-left: .9375rem
+  }
+  .tabs__navigation {
+    padding-right: .9375rem
+  }
+  .tabs__navigation {
+    margin-left: -.9375rem
+  }
+  .tabs__navigation {
+    margin-right: -.9375rem
+  }
   .best__image {
     padding-left: .9375rem
   }
   .best__image {
     padding-right: .9375rem
+  }
+}
+@media (max-width:47.99875em) and (any-hover:hover) {
+  .header__phone:hover {
+    text-decoration: none
   }
 }
 @media (max-width:29.99875em) {
@@ -1821,6 +1939,16 @@ textarea.input {
       font-size: calc(.875rem + .125 * (100vw - 20rem)/ 83.125)
     }
   }
+  @supports (font-size:clamp(1.125rem ,1.0347744361rem + 0.4511278195vw ,1.5rem)) {
+    .tabs__title {
+      font-size: clamp(1.125rem ,1.0347744361rem + .4511278195vw ,1.5rem)
+    }
+  }
+  @supports not (font-size:clamp(1.125rem ,1.0347744361rem + 0.4511278195vw ,1.5rem)) {
+    .tabs__title {
+      font-size: calc(1.125rem + .375 * (100vw - 20rem)/ 83.125)
+    }
+  }
   @supports (font-size:clamp(1.75rem ,1.2687969925rem + 2.4060150376vw ,3.75rem)) {
     .title--big {
       font-size: clamp(1.75rem ,1.2687969925rem + 2.4060150376vw ,3.75rem)
@@ -1859,6 +1987,16 @@ textarea.input {
   @supports not (font-size:clamp(1.125rem ,1.0347744361rem + 0.4511278195vw ,1.5rem)) {
     .text--big {
       font-size: calc(1.125rem + .375 * (100vw - 20rem)/ 83.125)
+    }
+  }
+  @supports (font-size:clamp(1rem ,0.9398496241rem + 0.3007518797vw ,1.25rem)) {
+    .text--sub {
+      font-size: clamp(1rem ,.9398496241rem + .3007518797vw ,1.25rem)
+    }
+  }
+  @supports not (font-size:clamp(1rem ,0.9398496241rem + 0.3007518797vw ,1.25rem)) {
+    .text--sub {
+      font-size: calc(1rem + .25 * (100vw - 20rem)/ 83.125)
     }
   }
   @supports (font-size:clamp(0.875rem ,0.844924812rem + 0.1503759398vw ,1rem)) {
@@ -2265,6 +2403,26 @@ textarea.input {
       height: calc(12.5rem + 28.125 * (100vw - 20rem)/ 83.125)
     }
   }
+  @supports (padding-top:clamp(6.25rem ,4.7462406015rem + 7.5187969925vw ,12.5rem)) {
+    .camera {
+      padding-top: clamp(6.25rem ,4.7462406015rem + 7.5187969925vw ,12.5rem)
+    }
+  }
+  @supports not (padding-top:clamp(6.25rem ,4.7462406015rem + 7.5187969925vw ,12.5rem)) {
+    .camera {
+      padding-top: calc(6.25rem + 6.25 * (100vw - 20rem)/ 83.125)
+    }
+  }
+  @supports (gap:clamp(1.5625rem ,1.3369360902rem + 1.1278195489vw ,2.5rem)) {
+    .camera-body__describ {
+      gap: clamp(1.5625rem ,1.3369360902rem + 1.1278195489vw ,2.5rem)
+    }
+  }
+  @supports not (gap:clamp(1.5625rem ,1.3369360902rem + 1.1278195489vw ,2.5rem)) {
+    .camera-body__describ {
+      gap: calc(1.5625rem + .9375 * (100vw - 20rem)/ 83.125)
+    }
+  }
   @supports (gap:clamp(1.25rem ,1.0394736842rem + 1.0526315789vw ,2.125rem)) {
     .hero__container {
       gap: clamp(1.25rem ,1.0394736842rem + 1.0526315789vw ,2.125rem)
@@ -2368,6 +2526,88 @@ textarea.input {
   @supports not (gap:clamp(0.625rem ,-3.8192103996rem + 5.5553498019vw ,2.5rem)) {
     .header__actions {
       gap: calc(.625rem + 1.875 * (100vw - 79.99875rem)/ 33.75125)
+    }
+  }
+}
+@media (max-width:47.99875em) and (min-width:47.99875em) {
+  .tabs__navigation {
+    padding-left: 1.75rem
+  }
+  .tabs__navigation {
+    padding-right: 1.75rem
+  }
+  .tabs__navigation {
+    margin-left: -1.75rem
+  }
+  .tabs__navigation {
+    margin-right: -1.75rem
+  }
+  .best__image {
+    padding-left: 1.875rem
+  }
+  .best__image {
+    padding-right: 1.875rem
+  }
+}
+@media (max-width:47.99875em) and (min-width:20em) and (max-width:47.99875em) {
+  @supports (padding-left:clamp(0.9375rem ,0.3571169472rem + 2.9019152641vw ,1.75rem)) {
+    .tabs__navigation {
+      padding-left: clamp(.9375rem ,.3571169472rem + 2.9019152641vw ,1.75rem)
+    }
+  }
+  @supports not (padding-left:clamp(0.9375rem ,0.3571169472rem + 2.9019152641vw ,1.75rem)) {
+    .tabs__navigation {
+      padding-left: calc(.9375rem + .8125 * (100vw - 20rem)/ 27.99875)
+    }
+  }
+  @supports (padding-right:clamp(0.9375rem ,0.3571169472rem + 2.9019152641vw ,1.75rem)) {
+    .tabs__navigation {
+      padding-right: clamp(.9375rem ,.3571169472rem + 2.9019152641vw ,1.75rem)
+    }
+  }
+  @supports not (padding-right:clamp(0.9375rem ,0.3571169472rem + 2.9019152641vw ,1.75rem)) {
+    .tabs__navigation {
+      padding-right: calc(.9375rem + .8125 * (100vw - 20rem)/ 27.99875)
+    }
+  }
+  @supports (margin-left:clamp(-1.75rem ,-0.3571169472rem + -2.9019152641vw ,-0.9375rem)) {
+    .tabs__navigation {
+      margin-left: clamp(-1.75rem ,-.3571169472rem + -2.9019152641vw ,-.9375rem)
+    }
+  }
+  @supports not (margin-left:clamp(-1.75rem ,-0.3571169472rem + -2.9019152641vw ,-0.9375rem)) {
+    .tabs__navigation {
+      margin-left: calc(-.9375rem + -.8125 * (100vw - 20rem)/ 27.99875)
+    }
+  }
+  @supports (margin-right:clamp(-1.75rem ,-0.3571169472rem + -2.9019152641vw ,-0.9375rem)) {
+    .tabs__navigation {
+      margin-right: clamp(-1.75rem ,-.3571169472rem + -2.9019152641vw ,-.9375rem)
+    }
+  }
+  @supports not (margin-right:clamp(-1.75rem ,-0.3571169472rem + -2.9019152641vw ,-0.9375rem)) {
+    .tabs__navigation {
+      margin-right: calc(-.9375rem + -.8125 * (100vw - 20rem)/ 27.99875)
+    }
+  }
+  @supports (padding-left:clamp(0.9375rem ,0.2678272468rem + 3.3483637662vw ,1.875rem)) {
+    .best__image {
+      padding-left: clamp(.9375rem ,.2678272468rem + 3.3483637662vw ,1.875rem)
+    }
+  }
+  @supports not (padding-left:clamp(0.9375rem ,0.2678272468rem + 3.3483637662vw ,1.875rem)) {
+    .best__image {
+      padding-left: calc(.9375rem + .9375 * (100vw - 20rem)/ 27.99875)
+    }
+  }
+  @supports (padding-right:clamp(0.9375rem ,0.2678272468rem + 3.3483637662vw ,1.875rem)) {
+    .best__image {
+      padding-right: clamp(.9375rem ,.2678272468rem + 3.3483637662vw ,1.875rem)
+    }
+  }
+  @supports not (padding-right:clamp(0.9375rem ,0.2678272468rem + 3.3483637662vw ,1.875rem)) {
+    .best__image {
+      padding-right: calc(.9375rem + .9375 * (100vw - 20rem)/ 27.99875)
     }
   }
 }
@@ -2508,36 +2748,6 @@ textarea.input {
   @supports not (max-width:clamp(20rem ,7.4994419394rem + 62.5027903031vw ,37.5rem)) {
     .about__text {
       max-width: calc(20rem + 17.5 * (100vw - 20rem)/ 27.99875)
-    }
-  }
-}
-@media (max-width:47.99875em) and (min-width:47.99875em) {
-  .best__image {
-    padding-left: 1.875rem
-  }
-  .best__image {
-    padding-right: 1.875rem
-  }
-}
-@media (max-width:47.99875em) and (min-width:20em) and (max-width:47.99875em) {
-  @supports (padding-left:clamp(0.9375rem ,0.2678272468rem + 3.3483637662vw ,1.875rem)) {
-    .best__image {
-      padding-left: clamp(.9375rem ,.2678272468rem + 3.3483637662vw ,1.875rem)
-    }
-  }
-  @supports not (padding-left:clamp(0.9375rem ,0.2678272468rem + 3.3483637662vw ,1.875rem)) {
-    .best__image {
-      padding-left: calc(.9375rem + .9375 * (100vw - 20rem)/ 27.99875)
-    }
-  }
-  @supports (padding-right:clamp(0.9375rem ,0.2678272468rem + 3.3483637662vw ,1.875rem)) {
-    .best__image {
-      padding-right: clamp(.9375rem ,.2678272468rem + 3.3483637662vw ,1.875rem)
-    }
-  }
-  @supports not (padding-right:clamp(0.9375rem ,0.2678272468rem + 3.3483637662vw ,1.875rem)) {
-    .best__image {
-      padding-right: calc(.9375rem + .9375 * (100vw - 20rem)/ 27.99875)
     }
   }
 }

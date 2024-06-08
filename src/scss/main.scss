@@ -1,4 +1,6 @@
 //========================================================================================================================================================
+// Home Page
+//========================================================================================================================================================
 // Hero
 .result {
 	@include adaptiveValue("padding-top", 200, 100);
@@ -23,7 +25,6 @@
 	&__article {
 	}
 }
-//========================================================================================================================================================
 // Product
 .product {
 	@include adaptiveValue("padding-top", 200, 100);
@@ -200,7 +201,6 @@
 		}
 	}
 }
-//========================================================================================================================================================
 // Expert
 .expert {
 	@include adaptiveValue("padding-top", 200, 100);
@@ -240,7 +240,6 @@
 	}
 
 	&__image {
-		border: toRem(10) solid $redColor;
 		&--margin {
 			@media (max-width: toEm(1279.98)) {
 				margin-top: toRem(115);
@@ -254,7 +253,6 @@
 		}
 	}
 }
-//========================================================================================================================================================
 // Patent
 .patent {
 	@include adaptiveValue("padding-top", 200, 100);
@@ -308,7 +306,6 @@
 	&__article {
 	}
 }
-//========================================================================================================================================================
 // Example
 .example {
 	@include adaptiveValue("padding-top", 200, 100);
@@ -356,7 +353,6 @@
 	&__title {
 	}
 }
-//========================================================================================================================================================
 // News
 .news {
 	@include adaptiveValue("padding-top", 200, 100);
@@ -408,7 +404,6 @@
 	&__text {
 	}
 }
-//========================================================================================================================================================
 // Quest
 .quest {
 	@include adaptiveValue("padding-top", 200, 100);
@@ -426,6 +421,163 @@
 		margin: toRem(0) toRem(0) toRem(0) auto;
 		@media (min-width: $mobile) {
 			max-width: 66.233766%;
+		}
+	}
+}
+//========================================================================================================================================================
+// About Page
+//========================================================================================================================================================
+// About
+.about {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__heading {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 52, 42);
+		}
+	}
+
+	&__body {
+		display: grid;
+		@include adaptiveValue("gap", 40, 20);
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $mobile) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__text {
+		@include adaptiveValue("max-width", 600, 320, $containerWidth, 767.98);
+	}
+}
+// Best
+.best {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 20);
+		}
+	}
+
+	&__title {
+	}
+
+	&__image {
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transform: scale(1.01);
+			object-position: cover;
+			@include adaptiveValue("height", 650, 200);
+		}
+		@media (min-width: $mobile) {
+			border: toRem(10) solid $redColor;
+		}
+		@media (max-width: $mobile) {
+			@include adaptiveValue("padding-left", 30, 15, 0, 767.98, 320);
+			@include adaptiveValue("padding-right", 30, 15, 0, 767.98, 320);
+			img {
+				border: toRem(10) solid $redColor;
+			}
+		}
+	}
+}
+//========================================================================================================================================================
+// About Page
+//========================================================================================================================================================
+// Camera
+.camera {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(30);
+		}
+		@media (max-width: $mobile) {
+			&:not(:last-child) {
+				margin-bottom: toRem(20);
+			}
+		}
+	}
+
+	&__tabs {
+	}
+}
+.camera-body {
+	&__content {
+		display: grid;
+		gap: toRem(15);
+		align-items: start;
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $mobile) {
+			gap: toRem(35);
+			grid-template-columns: auto;
+		}
+	}
+
+	&__describ {
+		display: grid;
+		@include adaptiveValue("gap", 40, 25);
+		@media (max-width: $mobile) {
+			order: 2;
+		}
+	}
+
+	&__about {
+	}
+
+	&__about-title {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__about-text {
+	}
+
+	&__caracter {
+	}
+
+	&__caracter-title {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__caracter-text {
+	}
+
+	&__cost {
+	}
+
+	&__result {
+	}
+
+	&__result-title {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__discount {
+	}
+
+	&__button {
+	}
+
+	&__image {
+		margin-top: toRem(80);
+		@media (max-width: $tablet) {
+			margin-top: toRem(0);
+		}
+		@media (max-width: $mobile) {
+			order: 1;
 		}
 	}
 }
