@@ -201,3 +201,164 @@
 	}
 }
 //========================================================================================================================================================
+// Filter
+.filter {
+	&__top {
+		top: 0;
+		left: -100%;
+		width: 100%;
+		z-index: 16;
+		display: flex;
+		position: fixed;
+		align-items: center;
+		transition: left 0.3s;
+		min-height: toRem(80);
+		background-color: $whiteColor;
+		justify-content: space-between;
+		border-bottom: toRem(1) solid rgba($mainColor, 0.1);
+		@include adaptiveValue("padding-left", 28, 15, 0, 767.98, 320);
+		@include adaptiveValue("padding-right", 28, 15, 0, 767.98, 320);
+		@media (min-width: $mobile) {
+			display: none;
+		}
+		.filter-open & {
+			left: 0;
+		}
+	}
+
+	&__cancel {
+		width: toRem(40);
+		height: toRem(40);
+		font-size: toRem(40);
+	}
+
+	&__body {
+		display: grid;
+		gap: toRem(80);
+		@media (max-width: $mobile) {
+			z-index: 15;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: -100%;
+			overflow: auto;
+			gap: toRem(40);
+			align-items: start;
+			transition: left 0.3s;
+			padding-top: toRem(100);
+			padding-bottom: toRem(30);
+			background-color: $bgColor;
+			grid-template-rows: 1fr auto;
+			@include adaptiveValue("padding-left", 28, 15, 0, 767.98, 320);
+			@include adaptiveValue("padding-right", 28, 15, 0, 767.98, 320);
+			.filter-open & {
+				left: 0;
+			}
+		}
+	}
+
+	&__main {
+		display: grid;
+		gap: toRem(80);
+		@media (max-width: $mobile) {
+			gap: toRem(40);
+		}
+	}
+
+	&__block {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(30);
+		}
+		@media (max-width: $mobile) {
+			&:not(:last-child) {
+				margin-bottom: toRem(20);
+			}
+		}
+	}
+
+	&__checkboxes {
+		display: grid;
+		gap: toRem(20);
+		.checkbox {
+			@media (any-hover: hover) {
+				&:hover {
+					.checkbox__text {
+						color: $orangeColor;
+					}
+				}
+			}
+		}
+		@media (max-width: $mobile) {
+			gap: toRem(15);
+		}
+	}
+
+	&__actions {
+		display: grid;
+		gap: toRem(20);
+		@media (max-width: $tablet) {
+			gap: toRem(15);
+		}
+	}
+
+	&__button {
+		@media (max-width: $tablet) {
+			max-width: 100%;
+		}
+	}
+}
+//========================================================================================================================================================
+// Thowar
+.thowar {
+	display: grid;
+	@include adaptiveValue("row-gap", 100, 50);
+	@include adaptiveValue("column-gap", 20, 10);
+	grid-template-columns: repeat(auto-fill, minmax(toRem(300), 1fr));
+	@media (max-width: $mobile) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	&__item {
+		display: grid;
+		@include adaptiveValue("row-gap", 40, 25);
+	}
+
+	&__image {
+		img {
+			@include adaptiveValue("height", 400, 200);
+		}
+	}
+
+	&__content {
+		display: grid;
+		@include adaptiveValue("row-gap", 20, 15);
+	}
+
+	&__title {
+	}
+
+	&__text {
+		line-height: 120%;
+		@include adaptiveValue("font-size", 16, 12);
+		p {
+			&:not(:last-child) {
+				margin-bottom: toRem(15);
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__button {
+		max-width: 100%;
+	}
+}
+//========================================================================================================================================================

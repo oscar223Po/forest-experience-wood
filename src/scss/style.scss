@@ -166,6 +166,7 @@ body {
 // $=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->
 // Підключення стилів окремих сторінок
 @import "main";
+@import "catalog";
 // ========================================================================================================================================================
 // Hero
 .hero {
@@ -221,6 +222,50 @@ body {
 			object-fit: cover;
 			object-position: cover;
 			@include adaptiveValue("height", 575, 220);
+		}
+	}
+}
+// ========================================================================================================================================================
+// Upper
+.upper {
+	position: relative;
+	&__image {
+		img {
+			@include adaptiveValue("height", 400, 200);
+		}
+	}
+
+	&__title {
+		left: 0;
+		right: 0;
+		display: flex;
+		color: $bgColor;
+		position: absolute;
+		justify-content: center;
+		@include adaptiveValue("bottom", 40, 45);
+	}
+}
+// ========================================================================================================================================================
+// Breadcrump
+.breadcrumbs {
+	@include adaptiveValue("padding-top", 150, 90);
+	&__container {
+	}
+
+	&__list {
+	}
+
+	&__item {
+		a {
+			font-size: toRem(14);
+			display: inline-flex;
+			transition: color 0.3s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					color: $orangeColor;
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 }

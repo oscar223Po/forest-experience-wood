@@ -18,8 +18,8 @@
 			row-gap: toRem(20);
 			padding-top: toRem(110);
 			padding-bottom: toRem(30);
-			grid-template-rows: 1fr auto;
 			background-color: $bgColor;
+			grid-template-rows: 1fr auto;
 			@include adaptiveValue("padding-left", 45, 15, 0, 1279.98, 320);
 			@include adaptiveValue("padding-right", 45, 15, 0, 1279.98, 320);
 			transition: left 0.3s;
@@ -40,11 +40,23 @@
 					left: 0;
 				}
 			}
+			.dark & {
+				padding-top: toRem(100);
+				&::before {
+					height: toRem(90);
+				}
+			}
 		}
 		@media (max-width: $mobile) {
 			padding-top: toRem(90);
 			&::before {
 				height: toRem(80);
+			}
+			.dark & {
+				padding-top: toRem(90);
+				&::before {
+					height: toRem(80);
+				}
 			}
 		}
 	}
@@ -142,6 +154,20 @@
 			&::after {
 				bottom: calc(50% - toRem(1));
 				transform: rotate(45deg);
+			}
+		}
+		.dark & {
+			span,
+			&::before,
+			&::after {
+				background-color: $bgColor;
+			}
+			.menu-open & {
+				span,
+				&::before,
+				&::after {
+					background-color: $mainColor;
+				}
 			}
 		}
 	}

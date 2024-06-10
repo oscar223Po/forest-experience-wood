@@ -1,0 +1,300 @@
+// ========================================================================================================================================================
+// Catalog
+.catalog {
+	@include adaptiveValue("padding-top", 120, 60);
+	&__container {
+		display: grid;
+		gap: toRem(20);
+		align-items: start;
+		grid-template-columns: toRem(370) 1fr;
+		@media (max-width: toEm(1279.98)) {
+			grid-template-columns: toRem(270) 1fr;
+		}
+		@media (max-width: $tablet) {
+			gap: toRem(15);
+			grid-template-columns: toRem(200) 1fr;
+		}
+		@media (max-width: $mobile) {
+			gap: toRem(0);
+			grid-template-columns: auto;
+		}
+	}
+
+	&__filter {
+		@include adaptiveValue("padding-top", 85, 65, 2, $containerWidth, 767.98);
+	}
+
+	&__body {
+	}
+
+	&__head {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 60, 25);
+		}
+	}
+
+	&__thowar {
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+.head-catalog {
+	@media (max-width: $mobile) {
+		display: grid;
+		justify-content: space-between;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	&__main {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: toRem(10);
+		column-gap: toRem(20);
+	}
+
+	&__button {
+		min-height: toRem(29);
+		border-radius: toRem(30);
+		padding: toRem(0) toRem(15);
+		transition: all 0.3s ease 0s;
+		border: toRem(1) solid $grayColor;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $whiteColor;
+				background-color: $orangeColor;
+				border: toRem(1) solid $orangeColor;
+			}
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: toRem(10);
+		column-gap: toRem(20);
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		min-height: toRem(29);
+		border-radius: toRem(30);
+		padding: toRem(0) toRem(15);
+		border: toRem(1) solid $grayColor;
+	}
+
+	&__remove-button {
+		display: flex;
+		height: toRem(20);
+		align-items: center;
+		margin-top: toRem(3);
+		min-width: toRem(20);
+		justify-content: center;
+		&::before {
+			@extend %ic;
+			font-weight: 600;
+			content: "\e901";
+			font-size: toRem(20);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeColor;
+			}
+		}
+	}
+
+	//--------------------------------------------------------------
+
+	&__filter {
+		@media (min-width: $mobile) {
+			display: none;
+		}
+		display: flex;
+		width: toRem(36);
+		height: toRem(36);
+		align-items: center;
+		font-size: toRem(36);
+		justify-content: center;
+		margin: toRem(0) toRem(0) toRem(0) auto;
+	}
+}
+// ========================================================================================================================================================
+// Module
+.module {
+	@include adaptiveValue("padding-top", 70, 30);
+	&__container {
+		display: grid;
+		gap: toRem(20);
+		align-items: start;
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $tablet) {
+			gap: toRem(15);
+		}
+		@media (max-width: $mobile) {
+			gap: toRem(20);
+			grid-template-columns: auto;
+		}
+	}
+
+	&__gallery {
+		display: grid;
+		gap: toRem(20);
+		@media (max-width: toEm(1279.98)) {
+			gap: toRem(10);
+		}
+	}
+
+	&__about {
+	}
+}
+.gallery-module {
+	&__slider {
+	}
+
+	&__wrapper {
+	}
+
+	&__slide {
+		transition: opacity 0.3s ease 0s;
+		&.swiper-slide-thumb-active {
+			opacity: 0.5;
+		}
+	}
+
+	&__thumbs {
+		@include adaptiveValue("height", 140, 65, 0, $containerWidth, 479.98);
+		.gallery-module__slide {
+			cursor: pointer;
+		}
+	}
+
+	&__arrows {
+		justify-content: space-between;
+	}
+}
+.about-module {
+	display: grid;
+	gap: toRem(40);
+	@media (max-width: $tablet) {
+		gap: toRem(20);
+	}
+	&__main {
+		padding-top: toRem(20);
+		padding-bottom: toRem(40);
+		border-top: toRem(1) solid $mainColor;
+		border-bottom: toRem(1) solid $mainColor;
+		@media (max-width: $tablet) {
+			padding-bottom: toRem(20);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__text {
+		p {
+			&:not(:last-child) {
+				margin-bottom: toRem(0);
+			}
+		}
+	}
+
+	&__caracter {
+		padding-bottom: toRem(40);
+		border-bottom: toRem(1) solid $mainColor;
+		@media (max-width: $tablet) {
+			padding-bottom: toRem(20);
+		}
+	}
+
+	&__subtitle {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__list {
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: toRem(7);
+		}
+	}
+
+	&__count {
+	}
+
+	&__quant {
+		display: flex;
+		gap: toRem(20);
+		align-items: center;
+	}
+
+	&__quantity {
+	}
+
+	&__result {
+		h4 {
+			&:not(:last-child) {
+				margin-bottom: toRem(10);
+			}
+		}
+	}
+
+	&__price {
+	}
+
+	&__button {
+	}
+}
+// ========================================================================================================================================================
+// Describt
+.describt {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__tabs {
+	}
+}
+.describt-body {
+	&__text {
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+
+	&__list {
+		padding-left: toRem(20);
+	}
+
+	&__item {
+		list-style: disc;
+		line-height: 125%;
+		@include adaptiveValue("font-size", 16, 14);
+		&:not(:last-child) {
+			margin-bottom: toRem(3);
+		}
+	}
+}
+// ========================================================================================================================================================
+// More
+.more {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(27);
+		}
+	}
+
+	&__thowar {
+	}
+}
+// ========================================================================================================================================================

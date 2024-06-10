@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Forest Experience (Продукция) - ProductPage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<!-- [Breadcrumps] -->
+			<nav aria-label="breadcrumb" class="breadcrumbs">
+				<div class="breadcrumbs__container">
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item"><a href="">Вернуться в каталог</a></li>
+					</ul>
+				</div>
+			</nav>
+			<!-- [Module] -->
+			<section class="module">
+				<div class="module__container">
+					<div class="module__gallery gallery-module">
+						<div class="gallery-module__slider swiper">
+							<div class="gallery-module__wrapper swiper-wrapper">
+								<div class="gallery-module__slide image image--hv swiper-slide"><img src="@img/module/01.jpg" alt="Image"></div>
+								<div class="gallery-module__slide image image--hv swiper-slide"><img src="@img/module/02.jpg" alt="Image"></div>
+								<div class="gallery-module__slide image image--hv swiper-slide"><img src="@img/module/03.jpg" alt="Image"></div>
+							</div>
+						</div>
+						<div class="gallery-module__thumbs swiper">
+							<div class="gallery-module__wrapper swiper-wrapper">
+								<div class="gallery-module__slide image swiper-slide"><img src="@img/module/01.jpg" alt="Image"></div>
+								<div class="gallery-module__slide image swiper-slide"><img src="@img/module/02.jpg" alt="Image"></div>
+								<div class="gallery-module__slide image swiper-slide"><img src="@img/module/03.jpg" alt="Image"></div>
+							</div>
+						</div>
+						<div class="gallery-module__arrows arrows">
+							<button type="button" class="arrows-arrow arrows-arrow--prev gallery-module__arrow--prev _icon-arrow"></button>
+							<button type="button" class="arrows-arrow arrows-arrow--next gallery-module__arrow--next _icon-arrow"></button>
+						</div>
+					</div>
+					<div class="module__about about-module">
+						<div class="about-module__main">
+							<h3 class="about-module__title title title--ord">Садовый паркет термодуб</h3>
+							<div class="about-module__text text text--sub">
+								<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание.</p>
+								<p>Садовый паркет поставляется секциями, представляющие собой основание из полиэтилена низкого давления, на котором с помощью саморезов закреплены планки, изготовленные из термодревесины. Планки изготавливаются с высокой точностью, что положительно сказывается на качестве материала</p>
+							</div>
+						</div>
+						<div class="about-module__caracter">
+							<h3 class="about-module__subtitle title title--sub">Технические характеристики:</h3>
+							<ul class="about-module__list">
+								<li class="about-module__item text text--min">Порода: Термодуб</li>
+								<li class="about-module__item text text--min">Длина: 100 м</li>
+								<li class="about-module__item text text--min">Ширина: 100 м</li>
+								<li class="about-module__item text text--min">Высота: 100 м</li>
+								<li class="about-module__item text text--min">Область применения: Лоджии, терассы, бассейны</li>
+							</ul>
+						</div>
+						<div class="about-module__count">
+							<h3 class="about-module__subtitle title title--sub">от 2 000 руб.</h3>
+							<div class="about-module__quant">
+								<span>Количество</span>
+								<div data-quantity class="about-module__quantity quantity">
+									<button data-quantity-minus type="button" class="quantity__button quantity__button--minus">-</button>
+									<div class="quantity__input">
+										<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+									</div>
+									<button data-quantity-plus type="button" class="quantity__button quantity__button--plus">+</button>
+								</div>
+							</div>
+						</div>
+						<div class="about-module__result">
+							<h4 class="title title--sub">Итого:</h4>
+							<h3 class="about-module__price title title--ord">20 000 руб.</h3>
+						</div>
+						<a href="" class="about-module__button button button--red">В корзину</a>
+					</div>
+				</div>
+			</section>
+			<!-- [Describt] -->
+			<section class="describt">
+				<div class="describt__container">
+					<div data-tabs class="describt__tabs tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="button" class="tabs__title _tab-active">Доставка</button>
+							<button type="button" class="tabs__title">Оплата</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body describt-body">
+								<div class="describt-body__text text text--min">
+									<p>Здесь информация о способах получения и доставки продукции. С какими компаниями работаете. Возможен ли самовывоз или доставка собственными силами. Вся информация в один столбец, полотном, разбитым на абзацы. То же самое и по оплате</p>
+									<p>Если есть необходимость перечислить транпортные компании, можно сделать это списком:</p>
+								</div>
+								<ul class="describt-body__list">
+									<li class="describt-body__item">компания 1</li>
+									<li class="describt-body__item">компания 2</li>
+									<li class="describt-body__item">компания 3</li>
+								</ul>
+							</div>
+							<div class="tabs__body describt-body">
+								<div class="describt-body__text text text--min">
+									<p>Если есть необходимость перечислить транпортные компании, можно сделать это списком:</p>
+									<p>Здесь информация о способах получения и доставки продукции. С какими компаниями работаете. Возможен ли самовывоз или доставка собственными силами. Вся информация в один столбец, полотном, разбитым на абзацы. То же самое и по оплате</p>
+									<p>Если есть необходимость перечислить транпортные компании, можно сделать это списком:</p>
+									<p>Здесь информация о способах получения и доставки продукции. С какими компаниями работаете. Возможен ли самовывоз или доставка собственными силами. Вся информация в один столбец, полотном, разбитым на абзацы. То же самое и по оплате</p>
+								</div>
+								<ul class="describt-body__list">
+									<li class="describt-body__item">компания 1</li>
+									<li class="describt-body__item">компания 2</li>
+									<li class="describt-body__item">компания 3</li>
+									<li class="describt-body__item">компания 4</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- [More] -->
+			<section class="more">
+				<div class="more__container">
+					<h3 class="more__title title title--ord">Вас может заинтересовать</h3>
+					<div class="more__thowar thowar">
+						<div class="thowar__item">
+							<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+							<div class="thowar__content">
+								<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+								<div class="thowar__text">
+									<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+								</div>
+								<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+								<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+								<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+							</div>
+							<a href="" class="thowar__button button button--red">Купить</a>
+						</div>
+						<div class="thowar__item">
+							<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+							<div class="thowar__content">
+								<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+								<div class="thowar__text">
+									<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+								</div>
+								<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+								<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+								<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+							</div>
+							<a href="" class="thowar__button button button--red">Купить</a>
+						</div>
+						<div class="thowar__item">
+							<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+							<div class="thowar__content">
+								<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+								<div class="thowar__text">
+									<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+								</div>
+								<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+								<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+								<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+							</div>
+							<a href="" class="thowar__button button button--red">Купить</a>
+						</div>
+						<div class="thowar__item">
+							<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+							<div class="thowar__content">
+								<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+								<div class="thowar__text">
+									<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+								</div>
+								<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+								<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+								<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+							</div>
+							<a href="" class="thowar__button button button--red">Купить</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_form.htm',{})
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

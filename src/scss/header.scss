@@ -11,6 +11,17 @@
 		background-color: $whiteColor;
 		box-shadow: rgba(33, 35, 38, 0.15) 0px 10px 10px -10px;
 	}
+	//--------------------------------------------------------------
+	&.dark {
+		color: $bgColor;
+		background-color: rgba($mainColor, 0.5);
+		.menu-open & {
+			color: $mainColor;
+		}
+		&._header-scroll {
+			background-color: rgba($mainColor, 0.7);
+		}
+	}
 	&__container {
 		display: flex;
 		align-items: center;
@@ -32,11 +43,39 @@
 				min-height: toRem(80);
 			}
 		}
+		.dark & {
+			min-height: toRem(100);
+			@media (max-width: toEm(1279.98)) {
+				min-height: toRem(90);
+			}
+			@media (max-width: $mobile) {
+				min-height: toRem(80);
+				._header-scroll & {
+					min-height: toRem(80);
+				}
+			}
+		}
+	}
+
+	&__body {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		min-height: toRem(100);
+		justify-content: space-between;
+		border-bottom: toRem(1) solid $bgColor;
+		@media (max-width: toEm(1279.98)) {
+			min-height: toRem(90);
+		}
+		@media (max-width: $mobile) {
+			min-height: toRem(80);
+		}
 	}
 
 	&__logo {
 		z-index: 3;
 		position: relative;
+		transition: color 0.3s ease 0s;
 		@include adaptiveValue("font-size", 36, 24);
 	}
 
@@ -61,6 +100,7 @@
 		font-weight: 700;
 		&::before {
 			display: none;
+			transition: color 0.3s ease 0s;
 		}
 		@media (any-hover: hover) {
 			&:hover {

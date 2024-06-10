@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Forest Experience (Каталог) - CatalogPage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header-dark.htm',{})
+		<main class="page">
+			<!-- [Upper] -->
+			<section class="upper">
+				<div class="upper__image image"><img src="@img/upper/01-back.jpg" alt="Image"></div>
+				<h1 class="upper__title title title--big">Каталог продукции</h1>
+			</section>
+			<!-- [Catalog] -->
+			<section class="catalog">
+				<div class="catalog__container">
+					<div class="catalog__filter filter">
+						<div class="filter__top">
+							<div class="filter__subtitle title title--ord">Фильтр</div>
+							<button type="button" class="filter__cancel _icon-cancel"></button>
+						</div>
+						<div class="filter__body">
+							<div class="filter__main">
+								<div class="filter__block">
+									<h4 class="filter__title title title--sub">ОБЛАСТЬ ПРИМЕНЕНИЯ</h4>
+									<div class="filter__checkboxes">
+										<div class="checkbox">
+											<input id="c_1" data-error="Error" class="checkbox__input" type="checkbox" value="1" name="form[]">
+											<label for="c_1" class="checkbox__label"><span class="checkbox__text">Фасад</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="c_2" data-error="Error" class="checkbox__input" type="checkbox" value="2" name="form[]">
+											<label for="c_2" class="checkbox__label"><span class="checkbox__text">Терасса</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="c_3" data-error="Error" class="checkbox__input" type="checkbox" value="3" name="form[]">
+											<label for="c_3" class="checkbox__label"><span class="checkbox__text">Интерьер</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="c_4" data-error="Error" class="checkbox__input" type="checkbox" value="4" name="form[]">
+											<label for="c_4" class="checkbox__label"><span class="checkbox__text">Декинг</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="c_5" data-error="Error" class="checkbox__input" type="checkbox" value="5" name="form[]">
+											<label for="c_5" class="checkbox__label"><span class="checkbox__text">Оргаждение/брусок</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="c_6" data-error="Error" class="checkbox__input" type="checkbox" value="6" name="form[]">
+											<label for="c_6" class="checkbox__label"><span class="checkbox__text">Бассейн</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="c_7" data-error="Error" class="checkbox__input" type="checkbox" value="7" name="form[]">
+											<label for="c_7" class="checkbox__label"><span class="checkbox__text">Сауна</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="c_8" data-error="Error" class="checkbox__input" type="checkbox" value="8" name="form[]">
+											<label for="c_8" class="checkbox__label"><span class="checkbox__text">Садовый паркет</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="c_9" data-error="Error" class="checkbox__input" type="checkbox" value="9" name="form[]">
+											<label for="c_9" class="checkbox__label"><span class="checkbox__text">Пиломатериал</span></label>
+										</div>
+									</div>
+								</div>
+								<div class="filter__block">
+									<h4 class="filter__title title title--sub">ПОРОДА ДЕРЕВА</h4>
+									<div class="filter__checkboxes">
+										<div class="checkbox">
+											<input id="d_1" data-error="Error" class="checkbox__input" type="checkbox" value="1" name="form[]">
+											<label for="d_1" class="checkbox__label"><span class="checkbox__text">Береза</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="d_2" data-error="Error" class="checkbox__input" type="checkbox" value="2" name="form[]">
+											<label for="d_2" class="checkbox__label"><span class="checkbox__text">Сосна</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="d_3" data-error="Error" class="checkbox__input" type="checkbox" value="3" name="form[]">
+											<label for="d_3" class="checkbox__label"><span class="checkbox__text">Дуб</span></label>
+										</div>
+										<div class="checkbox">
+											<input id="d_4" data-error="Error" class="checkbox__input" type="checkbox" value="4" name="form[]">
+											<label for="d_4" class="checkbox__label"><span class="checkbox__text">Ясень</span></label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filter__actions">
+								<a href="" class="filter__button button button--red">Применить</a>
+								<button type="button" class="filter__button filter__button-reset button button--brd">Сбросить фильтры</button>
+							</div>
+						</div>
+					</div>
+					<div class="catalog__body">
+						<div class="catalog__head head-catalog">
+							<div class="head-catalog__main">
+								<button type="button" class="head-catalog__button">Сбросить все</button>
+								<div class="head-catalog__items"></div>
+							</div>
+							<button type="button" class="head-catalog__filter filt-btn _icon-filter"></button>
+						</div>
+						<div class="catalog__thowar thowar">
+							<div class="thowar__item">
+								<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+								<div class="thowar__content">
+									<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+									<div class="thowar__text">
+										<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+									</div>
+									<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+									<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+									<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+								</div>
+								<a href="" class="thowar__button button button--red">Купить</a>
+							</div>
+							<div class="thowar__item">
+								<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+								<div class="thowar__content">
+									<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+									<div class="thowar__text">
+										<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+									</div>
+									<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+									<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+									<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+								</div>
+								<a href="" class="thowar__button button button--red">Купить</a>
+							</div>
+							<div class="thowar__item">
+								<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+								<div class="thowar__content">
+									<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+									<div class="thowar__text">
+										<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+									</div>
+									<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+									<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+									<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+								</div>
+								<a href="" class="thowar__button button button--red">Купить</a>
+							</div>
+							<div class="thowar__item">
+								<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+								<div class="thowar__content">
+									<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+									<div class="thowar__text">
+										<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+									</div>
+									<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+									<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+									<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+								</div>
+								<a href="" class="thowar__button button button--red">Купить</a>
+							</div>
+							<div class="thowar__item">
+								<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+								<div class="thowar__content">
+									<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+									<div class="thowar__text">
+										<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+									</div>
+									<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+									<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+									<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+								</div>
+								<a href="" class="thowar__button button button--red">Купить</a>
+							</div>
+							<div class="thowar__item">
+								<div class="thowar__image image image--hv"><img src="@img/thowar.jpg" alt="Image"></div>
+								<div class="thowar__content">
+									<h4 class="thowar__title title title--sub">Садовый паркет термодуб</h4>
+									<div class="thowar__text">
+										<p>Садовый паркет из термодуба представляет собой секции, состоящие из деревянных планок, закрепленных на основание</p>
+									</div>
+									<div class="thowar__info text text--min">Профиль<span>скошенный</span></div>
+									<div class="thowar__info text text--min">Размеры<span>100х100х100</span></div>
+									<div class="thowar__info title title--sub">Цена<span> от 1 000 руб</span></div>
+								</div>
+								<a href="" class="thowar__button button button--red">Купить</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_form.htm',{})
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

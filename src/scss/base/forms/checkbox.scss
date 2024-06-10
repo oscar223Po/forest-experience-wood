@@ -1,7 +1,8 @@
 .checkbox {
 	position: relative;
 	// .checkbox__input
-	&__input {
+	&__input,
+	&__input-form {
 		position: absolute;
 		width: 0;
 		height: 0;
@@ -36,9 +37,11 @@
 		}
 	}
 	// .checkbox__text
-	&__text {
+	&__text,
+	&__text-form {
 		line-height: 120%;
 		align-self: center;
+		transition: color 0.3s ease 0s;
 		a {
 			color: $orangeColor;
 			@media (any-hover: hover) {

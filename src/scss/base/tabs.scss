@@ -18,7 +18,7 @@
 			@include adaptiveValue("margin-left", -28, -15, 0, 767.98, 320);
 			@include adaptiveValue("margin-right", -28, -15, 0, 767.98, 320);
 			&:not(:last-child) {
-				margin-bottom: toRem(35);
+				margin-bottom: toRem(30);
 			}
 		}
 	}

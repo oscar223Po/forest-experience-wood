@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Thumbs } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,7 +27,7 @@ import "../../scss/base/swiper.scss";
 // Ініціалізація слайдерів
 function initSliders() {
 	// Список слайдерів
-	// Перевіряємо, чи є слайдер на сторінці
+	// ========================================================================================================================================================
 	if (document.querySelector('.example__slider')) { // Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
 		new Swiper('.example__slider', { // Вказуємо склас потрібного слайдера
@@ -102,6 +102,68 @@ function initSliders() {
 			}
 		});
 	}
+	// ========================================================================================================================================================
+	if (document.querySelector('.gallery-module__thumbs')) {
+		const thumbsSwiper = new Swiper('.gallery-module__thumbs', {
+			modules: [Thumbs],
+			observer: true,
+			watchOverflow: true,
+			observeParents: true,
+			slidesPerView: 3,
+			spaceBetween: 20,
+			// parallax: true,
+			speed: 800,
+			// Кнопки "вліво/вправо"
+			// Брейкпоінти
+			breakpoints: {
+				320: {
+					slidesPerView: 3,
+					spaceBetween: 10,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 10,
+				},
+				1279.98: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+			},
+			on: {
+				init: function (swiper) {
+				}
+			}
+		});
+		new Swiper('.gallery-module__slider', {
+			modules: [Thumbs, Navigation],
+			thumbs: {
+				swiper: thumbsSwiper
+			},
+			observer: true,
+			watchOverflow: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			speed: 800,
+			navigation: {
+				prevEl: '.gallery-module__arrow--prev',
+				nextEl: '.gallery-module__arrow--next',
+			},
+			/*
+			pagination: {
+				el: '.gallery-article__dotts',
+				clickable: true,
+				dynamicBullets: true
+			},
+			*/
+			// Dotts
+			on: {
+				init: function (swiper) {
+				}
+			}
+		});
+	}
+	// ========================================================================================================================================================
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
