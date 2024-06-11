@@ -1,0 +1,118 @@
+// ========================================================================================================================================================
+// Chapter
+.chapter {
+	@include adaptiveValue("padding-top", 120, 45);
+	&__container {
+		display: grid;
+		max-width: toRem(1130);
+		@include adaptiveValue("gap", 60, 35);
+		@include adaptiveValue("max-width", 1130, 515, 2, $containerWidth, 767.98);
+	}
+
+	&__main {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 25);
+		}
+	}
+
+	&__text {
+		line-height: 130%;
+	}
+
+	&__item {
+		.item-news__image {
+			img {
+				@include adaptiveValue("height", 680, 220);
+			}
+		}
+	}
+
+	&__quonote {
+		font-weight: 500;
+		padding-left: toRem(20);
+		border-left: toRem(1) solid $mainColor;
+		@include adaptiveValue("font-size", 18, 16);
+		@media (max-width: $mobile) {
+			padding-left: toRem(15);
+		}
+	}
+
+	&__content {
+		display: grid;
+		gap: toRem(20);
+		align-items: start;
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: $tablet) {
+			grid-template-columns: auto;
+			.chapter__text {
+				order: 2;
+			}
+		}
+	}
+
+	&__article {
+		.item-news__image {
+			img {
+				height: auto;
+			}
+		}
+		@media (max-width: $tablet) {
+			order: 1;
+		}
+	}
+
+	&__date {
+		font-size: toRem(14);
+	}
+}
+// ========================================================================================================================================================
+// Privacy
+.privacy {
+	@include adaptiveValue("padding-top", 200, 100);
+	&__container {
+	}
+
+	&__title {
+		text-align: center;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 80, 35);
+		}
+	}
+
+	&__blocks {
+		display: grid;
+		@include adaptiveValue("gap", 80, 35);
+	}
+
+	&__block {
+	}
+}
+.block-privacy {
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+		@media (max-width: $mobile) {
+			&:not(:last-child) {
+				margin-bottom: toRem(15);
+			}
+		}
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		@include adaptiveValue("gap", 40, 15, 0, $containerWidth, 767.98);
+		@media (max-width: $mobile) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__text {
+		@include adaptiveValue("max-width", 600, 320, 2, $containerWidth, 767.98);
+	}
+}
+// ========================================================================================================================================================

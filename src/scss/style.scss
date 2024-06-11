@@ -166,6 +166,7 @@ body {
 // $=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->
 // Підключення стилів окремих сторінок
 @import "main";
+@import "text";
 @import "catalog";
 // ========================================================================================================================================================
 // Hero
@@ -267,6 +268,45 @@ body {
 				}
 			}
 		}
+	}
+}
+// ========================================================================================================================================================
+// Error
+.error {
+	background: url("@img/error.jpg") center / cover no-repeat;
+	&__container {
+		display: flex;
+		min-height: 100vh;
+		align-items: center;
+		padding-top: toRem(50);
+		justify-content: center;
+		padding-bottom: toRem(50);
+	}
+
+	&__body {
+		color: $bgColor;
+		text-align: center;
+		max-width: toRem(880);
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__text {
+		p {
+			&:not(:last-child) {
+				margin-bottom: toRem(0);
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: toRem(40);
+		}
+	}
+
+	&__button {
 	}
 }
 // ========================================================================================================================================================

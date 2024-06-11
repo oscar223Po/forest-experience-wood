@@ -14,12 +14,12 @@
 	//--------------------------------------------------------------
 	&.dark {
 		color: $bgColor;
-		background-color: rgba($mainColor, 0.5);
+		background-color: rgba($mainColor, 0.6);
 		.menu-open & {
 			color: $mainColor;
 		}
 		&._header-scroll {
-			background-color: rgba($mainColor, 0.7);
+			background-color: rgba($mainColor, 0.8);
 		}
 	}
 	&__container {

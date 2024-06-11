@@ -231,6 +231,12 @@
 	}
 
 	&__text {
+		ul {
+			padding-left: toRem(20);
+		}
+		li {
+			list-style: disc;
+		}
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 40, 32);
 		}
@@ -356,6 +362,9 @@
 // News
 .news {
 	@include adaptiveValue("padding-top", 200, 100);
+	&.news-blog {
+		@include adaptiveValue("padding-top", 120, 70);
+	}
 	&__container {
 	}
 
@@ -372,6 +381,12 @@
 		grid-template-columns: repeat(auto-fill, minmax(toRem(400), 1fr));
 		&:not(:last-child) {
 			margin-bottom: toRem(40);
+		}
+		@media (min-width: $tablet) {
+			.news-blog & {
+				@include adaptiveValue("row-gap", 120, 40);
+				grid-template-columns: repeat(auto-fill, minmax(toRem(300), 1fr));
+			}
 		}
 		@media (max-width: $tablet) {
 			grid-template-columns: repeat(2, 1fr);
@@ -441,15 +456,15 @@
 
 	&__body {
 		display: grid;
-		@include adaptiveValue("gap", 40, 20);
 		grid-template-columns: repeat(2, 1fr);
+		@include adaptiveValue("gap", 40, 15, 0, $containerWidth, 767.98);
 		@media (max-width: $mobile) {
 			grid-template-columns: auto;
 		}
 	}
 
 	&__text {
-		@include adaptiveValue("max-width", 600, 320, $containerWidth, 767.98);
+		@include adaptiveValue("max-width", 600, 320, 2, $containerWidth, 767.98);
 	}
 }
 // Best
