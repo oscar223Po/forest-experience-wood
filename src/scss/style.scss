@@ -310,3 +310,41 @@ body {
 	}
 }
 // ========================================================================================================================================================
+// Cookies
+.cookies {
+	right: 30px;
+	bottom: 30px;
+	display: grid;
+	position: fixed;
+	gap: toRem(20);
+	&__item {
+		max-width: toRem(300);
+		border-radius: toRem(5);
+		background-color: $whiteColor;
+		padding: toRem(23) toRem(20) toRem(27) toRem(20);
+		box-shadow: rgba(0, 0, 0, 0.16) toRem(0) toRem(1) toRem(4);
+	}
+
+	&__text {
+		font-weight: 500;
+		line-height: 120%;
+		font-size: toRem(10);
+		a {
+			color: $orangeColor;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+
+	&__button {
+		max-width: toRem(80);
+		min-height: toRem(30);
+	}
+}
+// ========================================================================================================================================================

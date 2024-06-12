@@ -61,5 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			filterBody.classList.remove("filter-open")
 		})
 	}
+	// ================[ JavaScript Cookies Windows ]================
+	var buttons = document.querySelectorAll('.cookies__button');
+	buttons.forEach(function (button) {
+		button.addEventListener('click', function () {
+			var parent = button.parentNode;
+			parent.style.display = 'none';
+		});
+	});
 });
 //--------------------------------------------------------------

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240611221915">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240612143341">
 	<link rel="shortcut icon" href="img/icons/head-logo.svg">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,16 +17,16 @@
 		<!-- Header -->
 		<header class="header">
 			<div class="header__container">
-				<a href="" class="header__logo _icon-logo"></a>
+				<a href="home.html" class="header__logo _icon-logo"></a>
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="" class="menu__link">Каталог</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Услуги</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Производство</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Партнерам</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Образцы</a></li>
+							<li class="menu__item"><a href="catalog.html" class="menu__link">Каталог</a></li>
+							<li class="menu__item"><a href="service.html" class="menu__link">Услуги</a></li>
+							<li class="menu__item"><a href="about.html" class="menu__link">Производство</a></li>
+							<li class="menu__item"><a href="partners.html" class="menu__link">Партнерам</a></li>
+							<li class="menu__item"><a href="blog.html" class="menu__link">Новости</a></li>
+							<li class="menu__item"><a href="box.html" class="menu__link">Образцы</a></li>
 							<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
 						</ul>
 						<div class="menu__footer">
@@ -46,7 +46,7 @@
 				</div>
 				<div class="header__actions">
 					<a href="tel:+79999999999" class="header__phone _icon-phone"><span>+7 (999) 999-99-99</span></a>
-					<a href="" class="header__cart _icon-cart"><span>12</span></a>
+					<button data-popup="#cart" type="button" class="header__cart _icon-cart"><span>12</span></button>
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 					<h1 class="hero__title title title--big">Опыт Леса — это стабильность, экологичность, долговечность и премиальность</h1>
 					<h4 class="hero__subtitle hero__subtitle--max">Разрабатываем сертифицированный материал для решений на рынке</h4>
 					<div class="hero__buttons">
-						<a href="" class="hero__button button button--red">Каталог</a>
+						<button data-popup="#case" type="button" class="hero__button button button--red">Каталог</button>
 						<a href="" class="hero__button button button--brd">Заказать расчёт</a>
 					</div>
 				</div>
@@ -209,14 +209,222 @@
 							<h5>Предложение на сайте не является публичной офертой</h5>
 							<h5>*Instagram (Meta Platforms Inc.) запрещенная в РФ экстремистская организация</h5>
 						</div>
-						<a href="" class="bottom-footer__link">Политика конфиденциальности</a>
+						<a href="privacy.html" class="bottom-footer__link">Политика конфиденциальности</a>
 					</div>
 				</div>
 			</div>
 		</footer>
 		<!-- Footer -->
+		<!-- //======================================================================================================================================================== -->
+		<!-- Cart -->
+		<div id="cart" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content cart-popup">
+					<button data-close type="button" class="popup__close _icon-cancel"></button>
+					<h3 class="cart-popup__title title title--ord">ВАШ ЗАКАЗ</h3>
+					<div class="cart-popup__order">
+						<div class="cart-popup__items">
+							<div class="cart-popup__item item-cart">
+								<button type="button" class="item-cart__cancel-mob _icon-cancel"></button>
+								<div class="item-cart__content">
+									<div class="item-cart__image image"><img src="img/thowar.webp" alt="Image"></div>
+									<div class="item-cart__text">
+										<h5 class="title title--nor">Садовый паркет термодуб</h5>
+										<span>Профиль: скошенный</span>
+										<span>ДхШхВ, мм: 100х100х100</span>
+									</div>
+								</div>
+								<div data-quantity class="item-cart__quantity quantity">
+									<button data-quantity-minus type="button" class="quantity__button quantity__button--minus">-</button>
+									<div class="quantity__input">
+										<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+									</div>
+									<button data-quantity-plus type="button" class="quantity__button quantity__button--plus">+</button>
+								</div>
+								<div class="item-cart__result">
+									<div class="item-cart__cost title title--nor">20 000 руб</div>
+									<button type="button" class="item-cart__cancel _icon-cancel"></button>
+								</div>
+							</div>
+							<div class="cart-popup__item item-cart">
+								<button type="button" class="item-cart__cancel-mob _icon-cancel"></button>
+								<div class="item-cart__content">
+									<div class="item-cart__image image"><img src="img/thowar.webp" alt="Image"></div>
+									<div class="item-cart__text">
+										<h5 class="title title--nor">Садовый паркет термодуб</h5>
+										<span>Профиль: скошенный</span>
+										<span>ДхШхВ, мм: 100х100х100</span>
+									</div>
+								</div>
+								<div data-quantity class="item-cart__quantity quantity">
+									<button data-quantity-minus type="button" class="quantity__button quantity__button--minus">-</button>
+									<div class="quantity__input">
+										<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+									</div>
+									<button data-quantity-plus type="button" class="quantity__button quantity__button--plus">+</button>
+								</div>
+								<div class="item-cart__result">
+									<div class="item-cart__cost title title--nor">20 000 руб</div>
+									<button type="button" class="item-cart__cancel _icon-cancel"></button>
+								</div>
+							</div>
+							<div class="cart-popup__item item-cart">
+								<button type="button" class="item-cart__cancel-mob _icon-cancel"></button>
+								<div class="item-cart__content">
+									<div class="item-cart__image image"><img src="img/thowar.webp" alt="Image"></div>
+									<div class="item-cart__text">
+										<h5 class="title title--nor">Садовый паркет термодуб</h5>
+										<span>Профиль: скошенный</span>
+										<span>ДхШхВ, мм: 100х100х100</span>
+									</div>
+								</div>
+								<div data-quantity class="item-cart__quantity quantity">
+									<button data-quantity-minus type="button" class="quantity__button quantity__button--minus">-</button>
+									<div class="quantity__input">
+										<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+									</div>
+									<button data-quantity-plus type="button" class="quantity__button quantity__button--plus">+</button>
+								</div>
+								<div class="item-cart__result">
+									<div class="item-cart__cost title title--nor">20 000 руб</div>
+									<button type="button" class="item-cart__cancel _icon-cancel"></button>
+								</div>
+							</div>
+						</div>
+						<div class="cart-popup__result">
+							<div class="cart-popup__cost title title--nor">Сумма: 60 000 руб</div>
+							<div class="cart-popup__text">*Указанная стоимость является ориентировочной и может измениться</div>
+						</div>
+					</div>
+					<form action="" class="cart-popup__blank blank">
+						<div class="blank__inputs">
+							<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Ваше имя" class="input">
+							<input data-required="tel" data-inputmask="'mask': '+7-999-999-99-99'" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="+7 (999) 999-99-99" class="input">
+							<input data-required="email" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Электронная почта" class="input">
+							<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Город доставки" class="input">
+							<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Комментарии к заказу" class="input">
+						</div>
+						<div class="blank__checkbox checkbox">
+							<input id="crt_1" data-error="Error" class="checkbox__input-form" type="checkbox" value="1" name="form[]">
+							<label for="crt_1" class="checkbox__label"><span class="checkbox__text-form">Я согласен на обработку персональных данных согласно <a href="">Политике конфиденциальности</a></span></label>
+						</div>
+						<button data-popup="#thanks-ord" type="submit" class="blank__button button button--red">Отправить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- //======================================================================================================================================================== -->
+		<!-- Invoice -->
+		<div id="invoice" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content invoice-popup">
+					<button data-close type="button" class="popup__close _icon-cancel"></button>
+					<div class="invoice-popup__top">
+						<h4 class="invoice-popup__title title title--nor">Оставьте заявку</h4>
+						<div class="invoice-popup__text text text--min">и мы свяжемся с вами в течение рабочего дня</div>
+					</div>
+					<form action="" class="invoice-popup__blank blank">
+						<div class="blank__inputs">
+							<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Ваше имя" class="input">
+							<input data-required="tel" data-inputmask="'mask': '+7-999-999-99-99'" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="+7 (999) 999-99-99" class="input">
+							<input data-required="email" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Электронная почта" class="input">
+							<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Город" class="input">
+						</div>
+						<div class="blank__checkbox checkbox">
+							<input id="inv_1" data-error="Error" class="checkbox__input-form" type="checkbox" value="1" name="form[]">
+							<label for="inv_1" class="checkbox__label"><span class="checkbox__text-form">Я согласен на обработку персональных данных согласно <a href="">Политике конфиденциальности</a></span></label>
+						</div>
+						<button data-popup="#thanks-inv" type="submit" class="blank__button blank__button--center button button--red">Отправить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- //======================================================================================================================================================== -->
+		<!-- Thanks Invoice -->
+		<div id="thanks-inv" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content thanks-popup">
+					<button data-close type="button" class="popup__close _icon-cancel"></button>
+					<div class="thanks-popup__main">
+						<h4 class="thanks-popup__title title title--nor">Спасибо за заявку!</h4>
+						<div class="thanks-popup__text text text--min">
+							<p>Мы свяжемся с вами в течение рабочего дня, чтобы согласовать детали</p>
+							<p>Можете подписаться на нас в соцсетях, чтобы среди первых быть в курсе новостей</p>
+						</div>
+					</div>
+					<div class="thanks-popup__socials">
+						<a href="" class="thanks-popup__social _icon-social-in"></a>
+						<a href="" class="thanks-popup__social _icon-social-vk"></a>
+						<a href="" class="thanks-popup__social _icon-social-tg"></a>
+						<a href="" class="thanks-popup__social _icon-social-yu"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //======================================================================================================================================================== -->
+		<!-- Thanks Order -->
+		<div id="thanks-ord" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content thanks-popup">
+					<button data-close type="button" class="popup__close _icon-cancel"></button>
+					<div class="thanks-popup__main">
+						<h4 class="thanks-popup__title title title--nor">Спасибо за заказ!</h4>
+						<div class="thanks-popup__text text text--min">
+							<p>Мы свяжемся с вами в течение рабочего дня, чтобы согласовать детали</p>
+							<p>Можете подписаться на нас в соцсетях, чтобы среди первых быть в курсе новостей</p>
+						</div>
+					</div>
+					<div class="thanks-popup__socials">
+						<a href="" class="thanks-popup__social _icon-social-in"></a>
+						<a href="" class="thanks-popup__social _icon-social-vk"></a>
+						<a href="" class="thanks-popup__social _icon-social-tg"></a>
+						<a href="" class="thanks-popup__social _icon-social-yu"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //======================================================================================================================================================== -->
+		<!-- Case -->
+		<div id="case" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content case-popup">
+					<button data-close type="button" class="popup__close _icon-cancel"></button>
+					<div class="case-popup__body">
+						<div class="module__gallery gallery-module">
+							<div class="gallery-module__slider swiper">
+								<div class="gallery-module__wrapper swiper-wrapper">
+									<div class="gallery-module__slide image image--hv swiper-slide"><img src="img/popup/01.webp" alt="Image"></div>
+									<div class="gallery-module__slide image image--hv swiper-slide"><img src="img/popup/02.webp" alt="Image"></div>
+									<div class="gallery-module__slide image image--hv swiper-slide"><img src="img/popup/03.webp" alt="Image"></div>
+									<div class="gallery-module__slide image image--hv swiper-slide"><img src="img/popup/04.webp" alt="Image"></div>
+								</div>
+							</div>
+							<div class="gallery-module__thumbs swiper">
+								<div class="gallery-module__wrapper swiper-wrapper">
+									<div class="gallery-module__slide image swiper-slide"><img src="img/popup/01.webp" alt="Image"></div>
+									<div class="gallery-module__slide image swiper-slide"><img src="img/popup/02.webp" alt="Image"></div>
+									<div class="gallery-module__slide image swiper-slide"><img src="img/popup/03.webp" alt="Image"></div>
+									<div class="gallery-module__slide image swiper-slide"><img src="img/popup/04.webp" alt="Image"></div>
+								</div>
+							</div>
+							<div class="gallery-module__arrows arrows">
+								<button type="button" class="arrows-arrow arrows-arrow--prev gallery-module__arrow--prev _icon-arrow"></button>
+								<button type="button" class="arrows-arrow arrows-arrow--next gallery-module__arrow--next _icon-arrow"></button>
+							</div>
+						</div>
+						<div class="case-popup__about">
+							<h3 class="case-popup__title title title--nor">Одноэтажный дом в стиле современного шале с отделкой фасада продукцией Опыт Леса</h3>
+							<div class="case-popup__text text text--min">
+								<p>Дом с тремя спальнями — идеальное решение для семьи с детьми! Одну из детских можно переоборудовать под кабинет для комфортной работы из дома. Просторная кухня-гостиная на 34м2 с панорамным видом на сад точно не оставит никого равнодушным. Совмещённый потолок наполняет дом воздухом, а на уютной крытой террасе разместится стол для летних приёмов гостей и томных вечеров с семьёй.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //======================================================================================================================================================== -->
 	</div>
-	<script src="js/app.min.js?_v=20240611221915"></script>
+	<script src="js/app.min.js?_v=20240612143341"></script>
 </body>
 
 </html>

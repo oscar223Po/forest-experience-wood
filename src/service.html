@@ -14,7 +14,7 @@
 					<h1 class="hero__title title title--big">Услуги компании</h1>
 					<h4 class="hero__subtitle hero__subtitle--max">Предоставляем ряд услуг, которые пригодятся, если собираетесь заняться отделкой</h4>
 					<div class="hero__buttons">
-						<a href="" class="hero__button button button--red">Оставить заявку</a>
+						<button data-popup="#invoice" type="button" class="hero__button button button--red">Оставить заявку</button>
 					</div>
 				</div>
 				<div class="hero__image"><img src="@img/hero.jpg" alt="Image"></div>
@@ -37,6 +37,7 @@
 		</main>
 		@@include('html/_form.htm',{})
 		@@include('html/_footer.htm',{})
+		@@include('html/_popup.htm',{})
 	</div>
 	@@include('html/_js.htm',{})
 </body>

@@ -72,6 +72,7 @@
 		flex-wrap: wrap;
 		row-gap: toRem(10);
 		column-gap: toRem(20);
+		min-height: toRem(31);
 	}
 
 	&__item {

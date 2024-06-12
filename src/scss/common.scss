@@ -27,6 +27,9 @@
 			color: $orangeColor;
 		}
 	}
+	&--nor {
+		@include adaptiveValue("font-size", 24, 20);
+	}
 	&--sub {
 		@include adaptiveValue("font-size", 20, 14);
 	}
